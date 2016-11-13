@@ -1,0 +1,51 @@
+/* style page content */
+body {
+  margin-left: 50px;
+  background-color: white;
+}
+
+/* style header text */
+h1 {
+color: rgb(46, 189, 89);
+font-weight: normal;
+}
+
+/* style site text */
+h5 {
+  color: rgb(145, 148, 150);
+  padding-right: 10px;
+}
+
+/* style the button */
+#moodify {
+  background-color: rgb(46, 189, 89);
+  color: white;
+  padding: 10px 30px;
+  border-radius: 32px;
+  -moz-border-radius: 32px;
+  -webkit-border-radius: 32px;
+  border: none;
+  font-size: .90em;
+}
+
+/* lighten the button on mouse hover */
+#moodify:hover {
+  background-color: rgb(30, 215, 96);
+}
+
+/* remove blue border around button */
+#moodify:focus {
+  outline: 0;
+}
+
+/* style input text fields */
+input[type="text"], textarea {
+  border-style: 1px ;
+  padding: 5px 0px 5px 0px;
+  width: 200px;
+}
+
+label {
+  padding-right: 10px;
+  font-weight: normal;
+}
