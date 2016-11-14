@@ -3,7 +3,7 @@ function createSong() {
   new Song(title)
 
   $('#song').val('')
-  $('#main').empty()
+  $('#spotify').empty()
 }
 
 // <iframe src="https://embed.spotify.com/?uri=spotify:track:1HNE2PX70ztbEl6MLxrpNL" frameborder="0" allowtransparency="true"></iframe>

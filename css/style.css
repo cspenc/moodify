@@ -13,6 +13,7 @@ font-weight: normal;
 /* style site text */
 h5 {
   color: rgb(145, 148, 150);
+  font-weight: normal
 }
 
 /* style the button */
@@ -37,13 +38,62 @@ h5 {
   outline: 0;
 }
 
-/* style input text fields */
+/* style text input fields */
 input[type="text"], textarea {
   border-style: 1px ;
   padding: 5px 0px 5px 0px;
   width: 200px;
 }
 
+/* style labels for text input fields */
 label {
   font-weight: normal;
+}
+
+/*.overlay {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: black;
+    opacity:0.8;
+    z-index:1001;
+}
+.overlay-message{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 75%;
+    height: 75%;
+    background-color: white;
+    opacity:0.8;
+    z-index:1002;
+}
+
+.overlay-text {
+  position: relative;
+  left: 80%;
+}
+
+.fadein {
+  position: relative;
+  width: 500px;
+  height: 332px;
+}
+
+.fadein img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}*/
+
+/*.fadein { position:relative; width:500px; height:332px; }
+.fadein img { position:absolute; left:0; top:0; }*/
+
+#spotify {
+  padding-left: 10px;
 }

@@ -3,5 +3,5 @@ function createArtist() {
   new Artist(name)
 
   $('#artist').val('')
-  $('#main').empty()
+  $('#spotify').empty()
 }
