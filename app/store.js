@@ -1,1 +1,1 @@
-const store = {songs: [], artists: [], pictures: []}
+const store = {songs: [], artists: [], photos: []}

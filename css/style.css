@@ -13,7 +13,6 @@ font-weight: normal;
 /* style site text */
 h5 {
   color: rgb(145, 148, 150);
-  padding-right: 10px;
 }
 
 /* style the button */
@@ -46,6 +45,5 @@ input[type="text"], textarea {
 }
 
 label {
-  padding-right: 10px;
   font-weight: normal;
 }
