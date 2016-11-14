@@ -1,7 +1,7 @@
 function createArtist() {
-  let name = $('#artist').val()
+  let name = $('#input-2').val()
   new Artist(name)
 
-  $('#artist').val('')
+  $('#input-2').val('')
   $('#spotify').empty()
 }

@@ -1,8 +1,8 @@
 function createSong() {
-  let title = $('#song').val()
+  let title = $('#input-1').val()
   new Song(title)
 
-  $('#song').val('')
+  $('#input-1').val('')
   $('#spotify').empty()
 }
 

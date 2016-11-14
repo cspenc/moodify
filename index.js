@@ -5,16 +5,14 @@ $(document).ready(function() {
     getSong()
     getPhotos()
     $('#carousel-example-generic').carousel({
-      interval: 2000
+      interval: 1000
     })
 
     $(".overlay, .overlay-message").show();
-
     $(".overlay-message").click(function() {
         $('.carousel-inner').empty();
         $(".overlay, .overlay-message").hide();
     });
-
   })
 })
 
@@ -24,17 +22,16 @@ function getPhotos() {
   } else {
     var tags = store.artists[store.artists.length - 1].name
   }
-
   $.ajax({
       method: "GET",
       url: `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=81501bbe9c20b4cd761970acfb46108f&tags=${tags}&safe_search=1&format=json&nojsoncallback=1`
     }).done(function(data) {
      var photosArray = data.photos.photo
-     debugger
      for (let i = 0; i < 15; i++) {
-       store.photos.push(photosArray[Math.floor(Math.random() * photosArray.length)])
+      store.photos.push(photosArray[Math.floor(Math.random() * photosArray.length)])
      }
-     var newArray = store.photos.slice(store.photos.length - 15, store.photos.length - 2)
+     var newArray = store.photos.slice(store.photos.length - 16, store.photos.length - 2)
+     debugger
      $('.carousel-inner').empty()
      var firstPhoto = store.photos[store.photos.length-1]
      $('.carousel-inner').append(`<div class="item active"><img src="https://farm${firstPhoto.farm}.staticflickr.com/${firstPhoto.server}/${firstPhoto.id}_${firstPhoto.secret}.jpg"/></div>`)
