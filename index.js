@@ -7,11 +7,12 @@ $(document).ready(function() {
     getPhotos()
 
     $('#carousel-example-generic').carousel({
-      interval: 1000
+      interval: 2000
     })
 
     $(".overlay, .overlay-message").show();
     $(".overlay-message").click(function() {
+        $('#carousel-example-generic').attr('class', '')
         $('.carousel-inner').empty();
 
         $(".overlay, .overlay-message").hide();
@@ -33,25 +34,42 @@ function getPhotos() {
      var photosArray = data.photos.photo
 
      for (let i = 0; i < 15; i++) {
-      store.photos.push(photosArray[Math.floor(Math.random() * photosArray.length)])
+      var thePhoto = photosArray[Math.floor(Math.random() * photosArray.length)]
+      new Photo(thePhoto.farm, thePhoto.id, thePhoto.secret, thePhoto.server)
      }
 
      var newArray = store.photos.slice(store.photos.length - 15, store.photos.length - 2)
 
     //  $('.carousel-inner').empty()
      var firstPhoto = store.photos[store.photos.length-1]
-
-     $('.carousel-inner').append(`<div class="item active"><img src="https://farm${firstPhoto.farm}.staticflickr.com/${firstPhoto.server}/${firstPhoto.id}_${firstPhoto.secret}.jpg"/></div>`)
-
+     $('#carousel-example-generic').addClass('carousel slide')
+     $('.carousel-inner').append(`<div class="item active"><img src="${firstPhoto.url}"/></div>`)
      newArray.forEach(function(photo) {
-       $('.carousel-inner').append(`<div class="item"><img src="https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg"/></div>`)
+       $('.carousel-inner').append(`<div class="item"><img src="${photo.url}"/></div>`)
      })
   })
 }
 
 function getSong() {
+  // controller
+   // 1. responds to events on the views
+   // 2. takes in input
+       // adapters
+         // SpotifyAdapter({})
+             // {}
+   // 3. renders result
+
+ // if song || artist
+   // SpotifyAdapter({song: , artist: })
+     // give you back songs, or artists
+     // {artists: [], songs: }
+ // else
+   // you didnm't provide enough info.
+ //
   createArtist()
   createSong()
+
+  // spotifyAdapter
 
   var artist = store.artists[store.artists.length - 1].name
   var song = store.songs[store.artists.length - 1].title

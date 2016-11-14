@@ -1,13 +1,12 @@
 const Photo = (function() {
-  // let picId = 0
-  // return class Photo {
-  //   constructor(name){
-  //     this.picId = picId++;
-  //     this.farm = farm;
-  //     this.server = server;
-  //     this.id = id;
-  //     this.secret = secret;
-  //     this.url = url;
-  //     store.photos = [...store.photos, this];
-  // }
-})
+ return class Photo {
+   constructor(farm, id, secret, server){
+     this.farm = farm;
+     this.id = id;
+     this.secret = secret;
+     this.server = server;
+     this.url = `https://farm${this.farm}.staticflickr.com/${this.server}/${this.id}_${this.secret}.jpg`;
+     store.photos = [...store.photos, this];
+   }
+ }
+}())
