@@ -5,25 +5,14 @@ $(document).ready(function() {
     getSong()
     getPhotos()
 
-    // $(".overlay, .overlay-message").show();
+    $(".overlay, .overlay-message").show();
 
-    // $(".overlay-message").click(function() {
-    //     $(".overlay, .overlay-message").hide();
-    // });
+    $(".overlay-message").click(function() {
+        $(".overlay, .overlay-message").hide();
+    });
+
   })
 })
-
-// $(function(){
-//     $('.fadein img:gt(0)').hide();
-//     setInterval(function(){
-//       $('.fadein :first-child').fadeOut()
-//          .next('img').fadeIn()
-//          .end().appendTo('.fadein');},
-//       3000);
-// });
-
-
-
 
 function getPhotos() {
   if (store.songs[store.songs.length - 1].title !== "") {
@@ -40,20 +29,20 @@ function getPhotos() {
        store.photos.push(photosArray[Math.floor(Math.random() * photosArray.length)])
      }
      var newArray = store.photos.slice(store.photos.length - 15, store.photos.length - 1)
-     $('.fadein').empty()
+     $('#slideshow').empty()
      newArray.forEach(function(photo) {
-       $('.fadein').append(`<img src="https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg"/>`)
+       $('#slideshow').append(`<img src="https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg"/>`)
      })
   })
 
-  $(function(){
-    $('.fadein img:gt(0)').hide();
-    setInterval(function(){
-      $('.fadein :first-child').fadeOut()
-         .next('img').fadeIn()
-         .end().appendTo('.fadein');},
-      3000);
-});
+  // $(function(){
+  //   $('.fadein img:gt(0)').hide();
+  //   setInterval(function(){
+  //     $('.fadein :first-child').fadeOut()
+  //        .next('img').fadeIn()
+  //        .end().appendTo('.fadein');},
+  //     6000);
+// });
 
 }
 

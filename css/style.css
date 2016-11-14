@@ -50,49 +50,29 @@ label {
   font-weight: normal;
 }
 
-/*.overlay {
+.overlay {
     position:fixed;
     top:0;
     bottom:0;
     left:0;
     right:0;
-    background-color: black;
+    background-color:#000;
     opacity:0.8;
     z-index:1001;
 }
 .overlay-message{
     position: absolute;
-    top: 0;
+    top:0;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left:0;
+    right:0;
     margin: auto;
-    width: 75%;
-    height: 75%;
-    background-color: white;
+    width:400px;
+    height:250px;
+    background-color:#fff;
     opacity:0.8;
     z-index:1002;
 }
-
-.overlay-text {
-  position: relative;
-  left: 80%;
-}
-
-.fadein {
-  position: relative;
-  width: 500px;
-  height: 332px;
-}
-
-.fadein img {
-  position: absolute;
-  left: 0;
-  top: 0;
-}*/
-
-/*.fadein { position:relative; width:500px; height:332px; }
-.fadein img { position:absolute; left:0; top:0; }*/
 
 #spotify {
   padding-left: 10px;
