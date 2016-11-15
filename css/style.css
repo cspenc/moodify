@@ -4,6 +4,7 @@
 body {
   margin-left: 50px;
   background-color: white;
+  background-image: url(./../images/skulls.png);
 }
 
 /* style header text */
@@ -117,7 +118,7 @@ label {
 }
 
 img {
-  max-height: 500px;
+  max-height: 700px;
   margin: auto;
   width: 70%;
 }
