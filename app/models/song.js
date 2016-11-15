@@ -4,6 +4,7 @@ const Song = (function() {
     constructor(title){
       this.id = id++;
       this.title = title
+      this.photos = []
       store.songs = [...store.songs, this];
     }
   }
