@@ -35,7 +35,7 @@ function getPhotos() {
 
      for (let i = 0; i < 15; i++) {
       var thePhoto = photosArray[Math.floor(Math.random() * photosArray.length)]
-      new Photo(thePhoto.farm, thePhoto.id, thePhoto.secret, thePhoto.server)
+      new Photo(thePhoto.farm, thePhoto.id, thePhoto.secret, thePhoto.server, store.songs[store.songs.length - 1].id)
      }
 
      var newArray = store.photos.slice(store.photos.length - 15, store.photos.length - 2)
