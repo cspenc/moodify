@@ -80,7 +80,7 @@ function getSong() {
         url: `https://api.spotify.com/v1/search?q=track:${song}+artist:${artist}&type=track`
       }).done(function(data) {
           if (data.tracks.items.length < 1) {
-            $('#spotify').append('<h5>Cannot find track. You fucked up. Please check your song and/or artist.<h5>')
+            $('#spotify').append('<h5>Cannot find track. Please check your song and/or artist.<h5>')
           }
 
           let id = data.tracks.items[0].id
