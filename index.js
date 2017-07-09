@@ -75,38 +75,35 @@ function getSong() {
   var artist = store.artists[store.artists.length - 1].name
   var song = store.songs[store.artists.length - 1].title
 
-  if (song === "" && artist === "") {
+  if (song === "") {
       $('#spotify').append(`<h5>You gave me nothing to work with!</h5>`)
-  } else if (song !== "" && artist !== "") {
+  } else if (song !== "") {
     $.ajax({
-        method: "GET",
-        url: `https://api.spotify.com/v1/search?q=track:${song}+artist:${artist}&type=track`
+        method: "POST",
+        url: 'https://dayjams-rails.herokuapp.com/search',
+        data: JSON.stringify({token: token, song: {search_term: song}}),
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json'
       }).done(function(data) {
-          if (data.tracks.items.length < 1) {
+          if (data.songResults.length < 1) {
             $('#spotify').append('<h5>Cannot find track. Please check your song and/or artist.<h5>')
           }
 
-          let id = data.tracks.items[0].id
+          let id = data.songResults[0].id
 
           $('#spotify').append(`<iframe src="https://embed.spotify.com/?uri=spotify:track:${id}&theme=white&view=coverart" width="300" height="100" frameborder="0" allowtransparency="true"></iframe>`)
         })
-  } else if (artist === "") {
-    $.ajax({
-        method: "GET",
-        url: `https://api.spotify.com/v1/search?q=track:${song}&type=track`
-      }).done(function(data) {
-          let id = data.tracks.items[Math.floor(Math.random() * data.tracks.items.length)].id
-
-          $('#spotify').append(`<h5>You gave me no artist, so here's a random track that fits your title, "${song}":</h5><br><iframe src="https://embed.spotify.com/?uri=spotify:track:${id}&theme=white&view=coverart" width="300" height="100" frameborder="0" allowtransparency="true"></iframe>`)
-        })
-  } else if (song === "") {
-    $.ajax({
-        method: "GET",
-        url: `https://api.spotify.com/v1/search?q=artist:${artist}&type=track`
-      }).done(function(data) {
-          let id = data.tracks.items[Math.floor(Math.random() * data.tracks.items.length)].id
-
-          $('#spotify').append(`<h5>You gave me no song title, so here's a random track that fits your artist, "${artist}":</h5><br><iframe src="https://embed.spotify.com/?uri=spotify:track:${id}&theme=white&view=coverart" width="300" height="100" frameborder="0" allowtransparency="true"></iframe>`)
-        })
+    // $.ajax({
+    //     method: "GET",
+    //     url: `https://api.spotify.com/v1/search?q=track:${song}+artist:${artist}&type=track`
+    //   }).done(function(data) {
+    //       if (data.tracks.items.length < 1) {
+    //         $('#spotify').append('<h5>Cannot find track. Please check your song and/or artist.<h5>')
+    //       }
+    //
+    //       let id = data.tracks.items[0].id
+    //
+    //       $('#spotify').append(`<iframe src="https://embed.spotify.com/?uri=spotify:track:${id}&theme=white&view=coverart" width="300" height="100" frameborder="0" allowtransparency="true"></iframe>`)
+    //     })
   }
 }
