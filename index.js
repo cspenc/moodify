@@ -75,6 +75,10 @@ function getSong() {
   var artist = store.artists[store.artists.length - 1].name
   var song = store.songs[store.artists.length - 1].title
 
+  if (artist !== "") {
+    var song = song + " " + artist;
+  }
+
   if (song === "") {
       $('#spotify').append(`<h5>You gave me nothing to work with!</h5>`)
   } else if (song !== "") {
