@@ -1,4 +1,7 @@
+getToken();
+
 $(document).ready(function() {
+
   $(".overlay, .overlay-message").hide();
 
   $('#moodify').click(function(event) {
